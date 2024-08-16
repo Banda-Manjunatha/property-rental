@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# Property Rental Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This React-based property rental website allows users to browse, filter, and book rental properties. It features a responsive design and includes a shopping cart functionality.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### Property Listings
+- Display a variety of properties with images, titles, descriptions, prices, and "Book Now" buttons.
+- Properties include details such as location, number of bedrooms, and amenities.
 
-### `npm start`
+### Filtering System
+- Users can filter properties by:
+  - Location (beach, mountain, city)
+  - Price range
+  - Number of bedrooms
+  - Amenities (e.g., wifi, pool, fireplace)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Booking Management
+- Users can add properties to their booking cart.
+- The cart displays:
+  - Booked properties
+  - Number of nights for each booking
+  - Price per night
+  - Total price for each booking
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Cart Functionality
+- Users can access their cart by clicking the cart icon.
+- Within the cart, users can:
+  - Increase or decrease the number of nights for each booking
+  - Remove properties from their cart
+  - View the total cost of all bookings
 
-### `npm test`
+### Checkout Process
+- Users can proceed to checkout from the cart page.
+- The checkout form collects:
+  - Name
+  - Email
+  - Card number
+  - Expiration date
+  - CVV
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Responsive Design
+- The website is optimized for both desktop and mobile devices.
 
-### `npm run build`
+## Technical Details
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Built with React.js
+- Styled using Tailwind CSS
+- Uses React Router for navigation
+- State management handled with React Hooks (useState, useEffect)
+- Props used for component communication
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Main Components
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. `Main`: The homepage component that displays property listings and filters.
+2. `PropertyList`: Renders the list of available properties.
+3. `PropertyCard`: Displays individual property details.
+4. `Filters`: Allows users to filter properties based on various criteria.
+5. `Cart`: Shows the user's current bookings and total cost.
+6. `Checkout`: Handles the checkout process.
+7. `CartPage`: A separate page for viewing and managing the cart.
 
-### `npm run eject`
+## State Management
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Property data is stored in the `Main` component and passed down to child components.
+- Booking data is managed in the `Main` component and updated through functions passed as props.
+- Filter state is managed in the `Main` component and applied to the property list.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Routing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- The main page (`/`) displays property listings and filters.
+- The cart page (`/cart`) shows the user's bookings and checkout form.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Future Improvements
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Implement user authentication
+- Add a backend API for real-time property data and booking management
+- Enhance error handling and form validation
+- Implement a payment gateway for real transactions
+- Add more detailed property information and user reviews
