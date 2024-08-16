@@ -64,14 +64,13 @@ const initialProperties = [
 ];
 
 function App() {
-    const [properties, setProperties] = useState(initialProperties);
     const [filteredProperties, setFilteredProperties] =
         useState(initialProperties);
     const [bookings, setBookings] = useState([]);
     const [filters, setFilters] = useState({});
 
     useEffect(() => {
-        let result = properties;
+        let result = filteredProperties;
 
         if (filters.location) {
             result = result.filter(
@@ -106,7 +105,7 @@ function App() {
         }
 
         setFilteredProperties(result);
-    }, [filters, properties]);
+    }, [filters, filteredProperties]);
 
     const handleFilterChange = (filterType, value) => {
         setFilters((prevFilters) => ({
